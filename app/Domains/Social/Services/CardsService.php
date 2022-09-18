@@ -97,10 +97,10 @@ class CardsService extends BaseService
 
         try {
             $cards = $this->createCards([
-                'model_id' => $data['model_id'],
                 'content' => $data['content'],
                 'config' => $data['config'],
                 'picture' => $data['picture'],
+                'ip_address' => $data['ip_address'],
             ]);
         } catch (Exception $e) {
             DB::rollBack();
@@ -255,13 +255,12 @@ class CardsService extends BaseService
     protected function createCards(array $data = []): Cards
     {
         return $this->model::create([
-            'model_type' => User::class,
-            'model_id' => $data['model_id'],
             'content' => $data['content'],
             'config' => $this->createConfig($data['config']),
             'picture' => $this->createImage($data['picture']),
             'active' => $data['active'] ?? false,
             'blockade' => $data['blockade'] ?? false,
+            'ip_address' => $data['ip_address'] ?? null,
         ]);
     }
 

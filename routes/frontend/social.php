@@ -45,27 +45,27 @@ Route::group([
                     $trail->parent('frontend.social.cards.index')
                         ->push(__('Review Submit'), route('frontend.social.cards.review'));
                 });
+        });
 
-            /*
-             * All route names are prefixed with 'frontend.social.cards.publish.'.
-             */
-            Route::group([
-                'prefix' => 'publish',
-                'as' => 'publish.',
-            ], function () {
-                Route::get('article', [CardsController::class, 'article'])
-                    ->name('article')
-                    ->breadcrumbs(function (Trail $trail) {
-                        $trail->parent('frontend.social.cards.index')
-                            ->push(__('Publish article'), route('frontend.social.cards.publish.article'));
-                    });;
-                Route::get('picture', [CardsController::class, 'picture'])
-                    ->name('picture')
-                    ->breadcrumbs(function (Trail $trail) {
-                        $trail->parent('frontend.social.cards.index')
-                            ->push(__('Publish picture'), route('frontend.social.cards.publish.picture'));
-                    });;
-            });
+        /*
+         * All route names are prefixed with 'frontend.social.cards.publish.'.
+         */
+        Route::group([
+            'prefix' => 'publish',
+            'as' => 'publish.',
+        ], function () {
+            Route::get('article', [CardsController::class, 'article'])
+                ->name('article')
+                ->breadcrumbs(function (Trail $trail) {
+                    $trail->parent('frontend.social.cards.index')
+                        ->push(__('Publish article'), route('frontend.social.cards.publish.article'));
+                });;
+            Route::get('picture', [CardsController::class, 'picture'])
+                ->name('picture')
+                ->breadcrumbs(function (Trail $trail) {
+                    $trail->parent('frontend.social.cards.index')
+                        ->push(__('Publish picture'), route('frontend.social.cards.publish.picture'));
+                });;
         });
     });
 });

@@ -49,7 +49,6 @@ class PublishController extends Controller
          * 整理文字投稿資訊
          */
         $data = $request->validated();
-        $data['model_id'] = $request->user()->id;
 
         /**
          * 透過 ImagesGenerator 去產生文字圖片
@@ -79,6 +78,7 @@ class PublishController extends Controller
             'font' => $data['config']['font'],
             'ads' => $picture['ads'],
         ];
+        $data['ip_address'] = $request->ip();
 
         /**
          * 將文字投稿寫入
@@ -114,7 +114,6 @@ class PublishController extends Controller
          * 整理圖片投稿資訊
          */
         $data = $request->validated();
-        $data['model_id'] = $request->user()->id;
         $data['picture'] = [
             'local' => $path,
             'storage' => null,
@@ -123,6 +122,7 @@ class PublishController extends Controller
         $data['config'] = [
             'type' => 'picture',
         ];
+        $data['ip_address'] = $request->ip();
 
         /**
          * 將圖片投稿寫入
@@ -132,18 +132,5 @@ class PublishController extends Controller
         event(new PictureCreated($card));
 
         return new CardResource($card);
-    }
-
-    /**
-     * 指定文章發佈到社群平台
-     *
-     * @param PublishPlatformRequest $request
-     * @param Cards $card
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function publish(PublishPlatformRequest $request, Cards $card)
-    {
-
     }
 }

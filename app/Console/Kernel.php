@@ -34,27 +34,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         /**
-         * 每隔 1 分鐘
-         * 根據 cache index 去循序更新各社群平台的留言
-         */
-        $schedule->command('social:platform-comments-update')->everyMinute()->when(function () {
-            return Crons::everySomeMinutes('social:platform-comments-update', 1);
-        });
-
-        /**
          * 每隔 10 分鐘
          * 檢查群眾審核相關功能，判斷是否有需要發表的文章
          */
         $schedule->command('social:reviews-publish')->everyMinute()->when(function () {
             return Crons::everySomeMinutes('social:reviews-publish', 10);
-        });
-
-        /**
-         * 每隔 1 小時
-         * 重新檢查新發表的文章是否有尚未執行到的通知
-         */
-        $schedule->command('social:platform-card-notification')->everyMinute()->when(function () {
-            return Crons::everySomeMinutes('social:platform-card-notification', 60);
         });
 
         /**

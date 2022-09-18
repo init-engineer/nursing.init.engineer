@@ -32,9 +32,9 @@ Route::group([
         Route::group([
             'prefix' => 'publish',
             'as' => 'publish.',
-            'middleware' => [
-                'auth',
-            ],
+            // 'middleware' => [
+            //     'auth',
+            // ],
         ], function () {
             /**
              * 文字投稿

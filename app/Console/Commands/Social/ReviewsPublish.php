@@ -52,14 +52,14 @@ class ReviewsPublish extends Command
      *
      * @var int
      */
-    protected $doNotDisturbStart = 21;
+    protected $doNotDisturbStart = 1;
 
     /**
      * 勿擾模式 結束時間
      *
      * @var int
      */
-    protected $doNotDisturbEnd = 9;
+    protected $doNotDisturbEnd = 7;
 
     /**
      * 延遲模式
@@ -75,7 +75,7 @@ class ReviewsPublish extends Command
      *
      * @var int
      */
-    protected $delayMinutes = 120;
+    protected $delayMinutes = 60;
 
     /**
      * @var CardsService
@@ -173,15 +173,7 @@ class ReviewsPublish extends Command
             $yes = $card->reviews()->where('point', '>=', 1)->count();
             $no  = $card->reviews()->where('point', '<=', -1)->count();
             $count = $yes + $no;
-            if ($count >= 50 && ($yes / $count) >= 0.80) {
-                $result = true;
-            } else if ($count >= 40 && ($yes / $count) >= 0.85) {
-                $result = true;
-            } else if ($count >= 30 && ($yes / $count) >= 0.90) {
-                $result = true;
-            } else if ($count >= 20 && ($yes / $count) >= 0.95) {
-                $result = true;
-            } else if ($count >= 10 && ($yes / $count) >= 1.00) {
+            if ($count >= 1) {
                 $result = true;
             } else {
                 $result = false;

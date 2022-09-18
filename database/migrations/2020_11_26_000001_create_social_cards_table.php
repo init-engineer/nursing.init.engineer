@@ -79,7 +79,6 @@ class CreateSocialCardsTable extends Migration
         Schema::create('social_cards', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->uuid('uuid')->nullable();
-            $table->morphs('model');
             $table->longText('content')->comment('內文');
             $table->json('config')->comment('文章設定');
             $table->json('picture')->comment('圖片資訊');
