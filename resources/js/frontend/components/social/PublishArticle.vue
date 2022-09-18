@@ -146,14 +146,14 @@
                                 </div>
                                 <div class="mt-2 text-center">
                                     <input class="tgl tgl-flip" id="consent" type="checkbox" v-model="consent" />
-                                    <label style="display: inline-block" class="tgl-btn mt-2 mr-2" data-tg-off="杰哥不要！😱"
-                                        data-tg-on="好ㄛ🥴" for="consent"></label>
+                                    <label style="display: inline-block" class="tgl-btn mt-2 mr-2" data-tg-off="同意了點我"
+                                        data-tg-on="我同意" for="consent"></label>
                                     <label style="display: inline-block"
                                         :class="[consent ? 'text-success' : 'text-danger']" for="consent">
                                         {{
                                         consent
-                                        ? "我看完了，我願意遵守以上的內容守則，所以我按了「好ㄛ🥴」以表示我同意。"
-                                        : "杰哥，不要啦！杰哥不要！我不想遵守「內容守則」😭"
+                                        ? "我看完了，我願意遵守以上的內容守則。"
+                                        : "同意的話請按「同意了點我」"
                                         }}
                                     </label>
                                 </div>
