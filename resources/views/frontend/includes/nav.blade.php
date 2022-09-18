@@ -115,16 +115,6 @@
                                 :href="route('admin.dashboard')"
                                 :text="__('Administration')"
                                 class="dropdown-item" />
-                            {{-- OPCache 監控 --}}
-                            <x-utils.link
-                                :href="route('frontend.monitor.opcache.index')"
-                                :text="__('OPCache Monitor')"
-                                class="dropdown-item" />
-                            {{-- Queue 監控 --}}
-                            <x-utils.link
-                                :href="route('frontend.monitor.queue-monitor::index')"
-                                :text="__('Queue Monitor')"
-                                class="dropdown-item" />
                         @endif
 
                         {{-- 儀表板 --}}
