@@ -120,13 +120,13 @@ Route::group([
         Route::post('login', [LoginController::class, 'login']);
 
         // Registration
-        Route::get('register', [RegisterController::class, 'showRegistrationForm'])
-            ->name('register')
-            ->breadcrumbs(function (Trail $trail) {
-                $trail->parent('frontend.index')
-                    ->push(__('Register'), route('frontend.auth.register'));
-            });
-        Route::post('register', [RegisterController::class, 'register']);
+        // Route::get('register', [RegisterController::class, 'showRegistrationForm'])
+        //     ->name('register')
+        //     ->breadcrumbs(function (Trail $trail) {
+        //         $trail->parent('frontend.index')
+        //             ->push(__('Register'), route('frontend.auth.register'));
+        //     });
+        // Route::post('register', [RegisterController::class, 'register']);
 
         // Password Reset
         Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])
