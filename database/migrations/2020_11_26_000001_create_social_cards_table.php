@@ -90,12 +90,6 @@ class CreateSocialCardsTable extends Migration
             $table->string('ip_address')->nullable()->comment('IP Address');
             $table->timestamps();
             $table->softDeletes();
-
-            $table->index([
-                'id',
-                'model_id',
-                'model_type',
-            ], 'social_cards_id_model_id_model_type_index');
         });
 
         /** 社群平台文章 */
