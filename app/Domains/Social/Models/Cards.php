@@ -59,6 +59,7 @@ class Cards extends Model
         'blockade_by',
         'blockade_remarks',
         'blockade_at',
+        'ip_address',
     ];
 
     /**

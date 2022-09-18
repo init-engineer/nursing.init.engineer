@@ -239,7 +239,7 @@
                                                 <i class="fas fa-arrow-down"></i>
                                             </li>
                                             <li class="flow-step flow-light">
-                                                <p class="mb-0">進入群眾審核系統，等待管理員審核</p>
+                                                <p class="mb-0">進入版主審核系統，等待管理員審核</p>
                                             </li>
                                         </ul>
                                         <ul class="col-6">
@@ -289,7 +289,7 @@ export default {
             final: null,
             selector: {
                 theme: "black-green",
-                font: "auraka",
+                font: "huninn",
             },
             themes: [
                 "black-green",
@@ -315,16 +315,16 @@ export default {
                 "furry-broken-think",
             ],
             fonts: [
-                "auraka",
-                "kc24m",
-                "microsoft-jheng-hei",
-                "mingliu",
-                "kaiu",
-                "fot-matissepro-eb",
-                "taipei-sans-tc-beta-bold",
-                "cubic-11",
+                // "auraka",
+                // "kc24m",
+                // "microsoft-jheng-hei",
+                // "mingliu",
+                // "kaiu",
+                // "fot-matissepro-eb",
+                // "taipei-sans-tc-beta-bold",
+                // "cubic-11",
                 "huninn",
-                "glow-sans",
+                // "glow-sans",
             ],
         };
     },
@@ -423,17 +423,17 @@ export default {
             axios
                 .post(`/api/social/cards/publish/article`, data)
                 .then((response) => {
-                    // 圖片投稿成功，將目前狀態改為發表成功，將頁面移動到完成頁面
+                    // 文章投稿成功，將目前狀態改為發表成功，將頁面移動到完成頁面
                     self.final = "success";
                     self.changeSteps(self.$refs.listItem5, self.$refs.listItem6);
 
                     // 取出投稿編號，並顯示訊息給使用者看
                     let id = response.data.data.id;
                     Swal.fire(
-                        "您成功投稿圖片了！",
-                        `您的文章編號為<a href="/cards/show/${id}"> ${id}(#${id.toString(
+                        "您成功投稿文章了！",
+                        `<b>請您先截圖這個畫面，日後想申請刪除文章的時候，會以這頁截圖作為依據。</b><br/>您的文章編號為<a href="/cards/show/${id}"> ${id}(#${id.toString(
                             36
-                        )}) </a>您的投稿接下來會進入<a href="/cards/review">群眾審核系統</a>當中等待審核，這項系統是所有人都能參與的，您也可以投票給自己投稿的文章，加速文章被發表的速度。`,
+                        )}) </a>，您的投稿接下來會進入<a href="/cards/review">版主審核系統</a>當中等待審核，這項系統是所有人都能參與的，您也可以投票給自己投稿的文章，加速文章被發表的速度。`,
                         "success"
                     );
                 })
