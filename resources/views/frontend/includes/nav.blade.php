@@ -40,14 +40,16 @@
                     class="nav-link" />
             </li>
 
-            {{-- 群眾審核 --}}
-            <li class="nav-item">
-                <x-utils.link
-                    :href="route('frontend.social.cards.review')"
-                    :active="activeClass(Route::is('frontend.social.cards.review'))"
-                    :text="__('Review Submit')"
-                    class="nav-link" />
-            </li>
+            @auth
+                {{-- 群眾審核 --}}
+                <li class="nav-item">
+                    <x-utils.link
+                        :href="route('frontend.social.cards.review')"
+                        :active="activeClass(Route::is('frontend.social.cards.review'))"
+                        :text="__('Review Submit')"
+                        class="nav-link" />
+                </li>
+            @endauth
         </ul>
 
         {{-- 在右邊的功能 --}}
