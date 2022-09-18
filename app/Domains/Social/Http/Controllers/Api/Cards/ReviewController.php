@@ -81,6 +81,17 @@ class ReviewController extends Controller
             ], 200);
         }
 
+        /**
+         * 如果投票的是管理者，並且投的是通過票
+         * 那就需要附帶文章直接通過審核的決議
+         */
+        if ($request->user()->isAdmin() && (bool) $status) {
+            /**
+             * 將文章切換為已認證狀態
+             */
+            $model = $this->cardsService->mark($card, true);
+        }
+
         $this->reviewService->store([
             'model_id' => $request->user()->id,
             'card_id' => $card->id,
