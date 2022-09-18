@@ -7,18 +7,27 @@
     <div class="footer-copyright text-center py-1">
         <div class="container text-center text-md-left mt-5">
             <div class="row mt-3">
-                <div class="col-12 col-md-6 mx-auto mb-4">
-                    <h3 class="font-weight-bold">聯絡我們</h3>
+                <div class="col-12 col-md-4 mx-auto mb-4">
+                    <h3 class="font-weight-bold">聯絡小編</h3>
                     <hr class="accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 128px;">
-                    <p class="text-left"><a href="https://www.facebook.com/kantai.zeng"><i class="fab fa-facebook-square mr-3"></i> Kan-Tai Zeng</a></p>
+                    <p class="text-left"><a href="https://www.instagram.com/cowbanursing"><i class="fab fa-instagram-square mr-3"></i> IG@cowbanursing</a></p>
+                    <p class="text-left"><a href="https://t.me/Cowbanursing"><i class="fab fa-telegram mr-3"></i> TG 急事找小編</a></p>
+                </div>
+                <!--col-12-->
+
+                <div class="col-12 col-md-4 mx-auto mb-4">
+                    <h3 class="font-weight-bold">技術支援</h3>
+                    <hr class="accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 128px;">
+                    <p class="text-left"><a href="https://www.facebook.com/kantai.zeng"><i class="fab fa-facebook-square mr-3"></i> 乾太 ₍₍ ◝(･◡･)◟ ⁾⁾</a></p>
                     <p class="text-left"><a href="mailto:kantai.developer@gmail.com"><i class="fas fa-envelope mr-3"></i> kantai.developer@gmail.com</a></p>
                 </div>
                 <!--col-12-->
 
-                <div class="col-12 col-md-6 mx-auto mb-4">
+                <div class="col-12 col-md-4 mx-auto mb-4">
                     <h3 class="font-weight-bold">關於我們</h3>
                     <hr class="accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 128px;">
-                    <p>台灣最大工程師交友網站，你可以不會寫程式，但你不能不知道靠北護理師，有工程師的讚、大心、加油、哈、哇、嗚及怒到豹斃，這裡絕對有你的感動被留下，我要你天天來發文。</p>
+                    <p>🔴 我是誰，不重要，只要知道我與基層站在同一線</p>
+                    <p>🔴 這裡是靠北護理師小編真人經營</p>
                 </div>
                 <!--col-12-->
             </div>
