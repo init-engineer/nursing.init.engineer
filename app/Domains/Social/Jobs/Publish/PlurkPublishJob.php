@@ -155,11 +155,11 @@ class PlurkPublishJob implements ShouldQueue
          */
         $content = $contentFluent->reset()
             ->image($pictureResponse['full'])
+            ->header('投稿網址： https://cowbanursing.soci.vip/')
+            ->hr()
             ->header($this->cards->id)
             ->hr()
             ->body(Str::limit($this->cards->content, 300, ' ...'))
-            ->hr()
-            ->footer('投稿網址： https://cowbanursing.soci.vip/')
             ->build();
 
         /**
