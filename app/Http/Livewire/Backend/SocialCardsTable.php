@@ -76,9 +76,6 @@ class SocialCardsTable extends DataTableComponent
         return [
             Column::make(__('ID'), 'id')
                 ->sortable(),
-            Column::make(__('Author'), 'model.name')
-                ->searchable()
-                ->sortable(),
             Column::make(__('Picture'), 'picture')
                 ->sortable(),
             Column::make(__('Content'), 'content')
