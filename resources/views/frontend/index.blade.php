@@ -150,7 +150,7 @@
             <div class="form-group">
                 <textarea class="form-control form-control-lg" id="subtitle" rows="9" disabled></textarea>
             </div>
-            <a class="btn btn-bg btn-lg h1 py-2 px-5 my-2" href="{{ route('frontend.social.cards.publish.article') }}">前往投稿</a>
+            <a class="btn btn-danger btn-lg h1 py-2 px-5 my-2" href="{{ route('frontend.social.cards.publish.article') }}">前往投稿</a>
         </div>
         <!--col-md-3-->
     </div>
