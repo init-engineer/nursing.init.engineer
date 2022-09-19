@@ -3,7 +3,7 @@
         <i class="c-icon c-icon-lg cil-menu"></i>
     </button>
 
-    <a class="c-header-brand d-lg-none" href="#">
+    <a class="c-header-brand d-lg-none" href="{{ route('frontend.index') }}">
         <img src="{{ asset('img/brand/logo-dark.png') }}" width="128" alt="nursing.INIT.ENGINEER Logo">
         {{-- <svg width="118" height="46" alt="CoreUI Logo">
             <use xlink:href="{{ asset('img/brand/coreui.svg#full') }}"></use>
