@@ -160,7 +160,7 @@ class TwitterPublishJob implements ShouldQueue
          * 整理文章通知的內容
          */
         $status = $contentFluent->reset()
-            ->header('投稿網址： https://cowbanursing.soci.vip/')
+            ->body('投稿網址： https://cowbanursing.soci.vip/')
             ->hr()
             ->header($this->cards->id)
             ->hr()
