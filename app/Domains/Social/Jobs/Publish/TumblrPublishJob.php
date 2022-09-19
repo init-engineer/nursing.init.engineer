@@ -110,11 +110,7 @@ class TumblrPublishJob implements ShouldQueue
             ->hr()
             ->body($this->cards->content)
             ->hr()
-            ->footer(sprintf('💖 %s 官方 Discord 歡迎在這找到你的同溫層！', appName()))
-            ->footer('👉 https://discord.gg/tPhnrs2')
-            ->hr()
-            ->footer('💖 全平台留言、文章詳細內容')
-            ->footer('👉 ' . route('frontend.social.cards.show', ['id' => $this->cards->id]))
+            ->footer('投稿網址： https://cowbanursing.soci.vip/')
             ->build('html');
 
         /**

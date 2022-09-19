@@ -158,6 +158,8 @@ class PlurkPublishJob implements ShouldQueue
             ->header($this->cards->id)
             ->hr()
             ->body(Str::limit($this->cards->content, 300, ' ...'))
+            ->hr()
+            ->footer('投稿網址： https://cowbanursing.soci.vip/')
             ->build();
 
         /**
@@ -196,32 +198,6 @@ class PlurkPublishJob implements ShouldQueue
         activity('social cards - plurk platform card')
             ->performedOn($platformCard)
             ->log(json_encode($platformCard));
-
-        /**
-         * 建立 Discord 宣傳內容
-         */
-        $content = $contentFluent->reset()
-            ->footer(sprintf('💖 %s Discord', appName() . Str::random(8)))
-            ->footer('👉 https://discord.gg/tPhnrs2')
-            ->build();
-
-        /**
-         * 對社群文章執行 Discord 宣傳留言
-         */
-        dispatch(new PlurkPushCommentJob($this->platform, $platformCard, $content))->onQueue('medium');
-
-        /**
-         * 建立文章宣傳內容
-         */
-        $content = $contentFluent->reset()
-            ->footer(sprintf('💖 %s 全平台', appName() . Str::random(8)))
-            ->footer('👉 ' . route('frontend.social.cards.show', ['id' => $this->cards->id]))
-            ->build();
-
-        /**
-         * 對社群文章執行文章宣傳留言
-         */
-        dispatch(new PlurkPushCommentJob($this->platform, $platformCard, $content))->onQueue('medium');
 
         return;
     }

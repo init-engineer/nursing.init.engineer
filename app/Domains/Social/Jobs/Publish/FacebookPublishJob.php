@@ -90,6 +90,8 @@ class FacebookPublishJob implements ShouldQueue
             ->header($this->cards->id)
             ->hr()
             ->body($this->cards->content)
+            ->hr()
+            ->footer('投稿網址： https://cowbanursing.soci.vip/')
             ->build();
 
         /**
@@ -176,32 +178,6 @@ class FacebookPublishJob implements ShouldQueue
         activity('social cards - facebook platform card')
             ->performedOn($platformCard)
             ->log(json_encode($platformCard));
-
-        /**
-         * 建立 Discord 宣傳內容
-         */
-        $message = $contentFluent->reset()
-            ->footer(sprintf('💖 %s 官方 Discord 歡迎在這找到你的同溫層！', appName()))
-            ->footer('👉 https://discord.gg/tPhnrs2')
-            ->build();
-
-        /**
-         * 對社群文章執行 Discord 宣傳留言
-         */
-        dispatch(new FacebookPushCommentJob($this->platform, $platformCard, $message))->onQueue('medium');
-
-        /**
-         * 建立文章宣傳內容
-         */
-        $message = $contentFluent->reset()
-            ->footer('💖 全平台留言、文章詳細內容')
-            ->footer('👉 ' . route('frontend.social.cards.show', ['id' => $this->cards->id]))
-            ->build();
-
-        /**
-         * 對社群文章執行文章宣傳留言
-         */
-        dispatch(new FacebookPushCommentJob($this->platform, $platformCard, $message))->onQueue('medium');
 
         return;
     }
