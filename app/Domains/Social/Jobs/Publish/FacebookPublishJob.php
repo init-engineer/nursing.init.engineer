@@ -179,6 +179,19 @@ class FacebookPublishJob implements ShouldQueue
             ->performedOn($platformCard)
             ->log(json_encode($platformCard));
 
+        /**
+         * 建立 Instagram 宣傳內容
+         */
+        $message = $contentFluent->reset()
+            ->footer('⭐️ 靠北護理師 小編 Instagram，歡迎一起來接收負能量')
+            ->footer('⭐️ https://instagram.com/cowbanursing')
+            ->build();
+
+        /**
+         * 對社群文章執行 Instagram 宣傳留言
+         */
+        dispatch(new FacebookPushCommentJob($this->platform, $platformCard, $message))->onQueue('medium');
+
         return;
     }
 }
