@@ -122,15 +122,19 @@ class ReviewsPublish extends Command
             $hour = Carbon::now('Asia/Taipei')->hour;
             if ($this->doNotDisturbStart >= $this->doNotDisturbEnd) {
                 // 如果開始時間是 00:00 過後
-                if ($hour >= $this->doNotDisturbStart ||
-                     $hour <= $this->doNotDisturbEnd) {
+                if (
+                    $hour >= $this->doNotDisturbStart ||
+                    $hour <= $this->doNotDisturbEnd
+                ) {
                     // echo something ...
                     return Command::INVALID;
                 }
             } else {
                 // 如果開始時間是 23:59 以前
-                if ($hour >= $this->doNotDisturbStart &&
-                     $hour <= $this->doNotDisturbEnd) {
+                if (
+                    $hour >= $this->doNotDisturbStart &&
+                    $hour <= $this->doNotDisturbEnd
+                ) {
                     // echo something ...
                     return Command::INVALID;
                 }
@@ -173,22 +177,10 @@ class ReviewsPublish extends Command
          */
         foreach ($cards as $card) {
             /**
-             * 規則表
-             * 投票人數 同意配重
-             * 10      >= 100%
-             * 20      >= 95%
-             * 30      >= 90%
-             * 40      >= 85%
-             * 50      >= 80%
+             * 同意票數大於 1 張
              */
             $yes = $card->reviews()->where('point', '>=', 1)->count();
-            $no  = $card->reviews()->where('point', '<=', -1)->count();
-            $count = $yes + $no;
-            if ($count >= 1) {
-                $result = true;
-            } else {
-                $result = false;
-            }
+            $result = ($yes >= 1) ? true : false;
 
             /**
              * 根據規則結果
@@ -204,7 +196,7 @@ class ReviewsPublish extends Command
                  */
                 foreach ($platforms as $platform) {
                     switch ($platform->type) {
-                        /**
+                            /**
                          * 丟給負責發表文章到 Facebook 的 Job
                          */
                         case Platform::TYPE_FACEBOOK:
