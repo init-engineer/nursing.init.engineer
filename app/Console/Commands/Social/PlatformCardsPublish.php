@@ -52,14 +52,14 @@ class PlatformCardsPublish extends Command
      *
      * @var int
      */
-    protected $doNotDisturbStart = 21;
+    protected $doNotDisturbStart = 1;
 
     /**
      * 勿擾模式 結束時間
      *
      * @var int
      */
-    protected $doNotDisturbEnd = 9;
+    protected $doNotDisturbEnd = 7;
 
     /**
      * 延遲模式
@@ -75,7 +75,7 @@ class PlatformCardsPublish extends Command
      *
      * @var int
      */
-    protected $delayMinutes = 120;
+    protected $delayMinutes = 30;
 
     /**
      * Execute the console command.
@@ -103,20 +103,31 @@ class PlatformCardsPublish extends Command
          */
         if ($this->doNotDisturbMode) {
             $hour = Carbon::now('Asia/Taipei')->hour;
-            if (
-                $hour >= $this->doNotDisturbStart ||
-                $hour <= $this->doNotDisturbEnd
-            ) {
-                // echo something ...
-
-                return Command::INVALID;
+            if ($this->doNotDisturbStart >= $this->doNotDisturbEnd) {
+                // 如果開始時間是 00:00 過後
+                if (
+                    $hour >= $this->doNotDisturbStart ||
+                    $hour <= $this->doNotDisturbEnd
+                ) {
+                    // echo something ...
+                    return Command::INVALID;
+                }
+            } else {
+                // 如果開始時間是 23:59 以前
+                if (
+                    $hour >= $this->doNotDisturbStart &&
+                    $hour <= $this->doNotDisturbEnd
+                ) {
+                    // echo something ...
+                    return Command::INVALID;
+                }
             }
         }
 
         /**
          * 抓出 3 天以內，群眾審核通過、尚未被刪除的文章
          */
-        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(3))
+        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(14))
             ->active(true)
             ->blockade(false)
             ->get();
