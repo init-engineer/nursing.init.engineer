@@ -42,11 +42,11 @@ class Kernel extends ConsoleKernel
         });
 
         /**
-         * 每隔 1 小時
+         * 每隔 10 分鐘
          * 重新檢查群眾審核相關功能，是否有遺漏尚未發表到社群平台的文章
          */
         $schedule->command('social:platform-card-publish')->everyMinute()->when(function () {
-            return Crons::everySomeMinutes('social:platform-card-publish', 60);
+            return Crons::everySomeMinutes('social:platform-card-publish', 10);
         });
 
         /**
