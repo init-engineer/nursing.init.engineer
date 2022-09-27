@@ -184,7 +184,7 @@ class FacebookPublishJob implements ShouldQueue
          */
         $message = $contentFluent->reset()
             ->footer('⭐️ 靠北護理師 小編 Instagram，歡迎一起來接收負能量')
-            ->footer('⭐️ https://instagram.com/cowbanursing')
+            ->footer('⭐️ https://www.instagram.com/cowbanursing/')
             ->build();
 
         /**
