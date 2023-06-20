@@ -15,7 +15,7 @@ class SocialCardsTable extends DataTableComponent
     /**
      * Livewire Datatable default sort column.
      */
-    public string $defaultSortColumn = 'id';
+    public string $defaultSortColumn = 'updated_at';
 
     /**
      * Livewire Datatable default sort direction.
