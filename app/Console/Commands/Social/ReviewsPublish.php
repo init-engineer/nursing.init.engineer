@@ -158,9 +158,9 @@ class ReviewsPublish extends Command
         }
 
         /**
-         * 抓出 14 天以內，尚未發表、尚未被刪除的文章
+         * 抓出 N 天以內，尚未發表、尚未被刪除的文章
          */
-        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(14))
+        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(21))
             ->active(false)
             ->blockade(false)
             ->get();
