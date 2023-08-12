@@ -125,9 +125,9 @@ class PlatformCardsPublish extends Command
         }
 
         /**
-         * 抓出 3 天以內，群眾審核通過、尚未被刪除的文章
+         * 抓出 N 天以內，群眾審核通過、尚未被刪除的文章
          */
-        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(14))
+        $cards = Cards::whereDate('created_at', '>=', Carbon::now()->subDays(21))
             ->active(true)
             ->blockade(false)
             ->get();
