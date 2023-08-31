@@ -75,7 +75,7 @@ class PlatformCardsPublish extends Command
      *
      * @var int
      */
-    protected $delayMinutes = 30;
+    protected $delayMinutes = 20;
 
     /**
      * Execute the console command.
