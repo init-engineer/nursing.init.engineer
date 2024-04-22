@@ -12,6 +12,7 @@
                     <hr class="accent-2 mb-2 mt-0 d-inline-block mx-auto" style="width: 128px;">
                     <p class="text-left"><a href="https://www.instagram.com/cowbanursing"><i class="fab fa-instagram-square mr-3"></i> IG@cowbanursing</a></p>
                     <p class="text-left"><a href="https://t.me/Cowbanursing"><i class="fab fa-telegram mr-3"></i> TG 急事找小編</a></p>
+                    <p class="text-left"><a href="mailto:cowbanursing@gmail.com"><i class="fas fa-envelope mr-3"></i> cowbanursing@gmail.com</a></p>
                 </div>
                 <!--col-12-->
 
