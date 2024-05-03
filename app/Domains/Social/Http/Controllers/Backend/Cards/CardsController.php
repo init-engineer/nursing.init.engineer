@@ -2,10 +2,6 @@
 
 namespace App\Domains\Social\Http\Controllers\Backend\Cards;
 
-use App\Domains\Social\Http\Requests\Backend\Cards\DeleteCardsRequest;
-use App\Domains\Social\Http\Requests\Backend\Cards\EditCardsRequest;
-use App\Domains\Social\Http\Requests\Backend\Cards\StoreCardsRequest;
-use App\Domains\Social\Http\Requests\Backend\Cards\UpdateCardsRequest;
 use App\Domains\Social\Jobs\Publish\DiscordPublishJob;
 use App\Domains\Social\Jobs\Publish\FacebookPublishJob;
 use App\Domains\Social\Jobs\Publish\PlurkPublishJob;
@@ -60,7 +56,7 @@ class CardsController extends Controller
      * @throws \App\Exceptions\GeneralException
      * @throws \Throwable
      */
-    public function store(StoreCardsRequest $request)
+    public function store($request)
     {
         $cards = $this->cardsService->store($request->validated());
 
@@ -84,7 +80,7 @@ class CardsController extends Controller
      *
      * @return mixed
      */
-    public function edit(EditCardsRequest $request, Cards $cards)
+    public function edit($request, Cards $cards)
     {
         return view('backend.social.cards.edit')
             ->with('cards', $cards);
@@ -259,7 +255,7 @@ class CardsController extends Controller
      * @return mixed
      * @throws \Throwable
      */
-    public function update(UpdateCardsRequest $request, Cards $cards)
+    public function update($request, Cards $cards)
     {
         $this->cardsService->update($cards, $request->validated());
 
@@ -273,7 +269,7 @@ class CardsController extends Controller
      * @return mixed
      * @throws \App\Exceptions\GeneralException
      */
-    public function destroy(DeleteCardsRequest $request, Cards $cards)
+    public function destroy($request, Cards $cards)
     {
         $this->cardsService->delete($cards);
 
