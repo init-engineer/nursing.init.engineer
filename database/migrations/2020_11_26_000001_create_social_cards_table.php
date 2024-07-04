@@ -88,6 +88,7 @@ class CreateSocialCardsTable extends Migration
             $table->string('blockade_remarks')->nullable()->comment('封鎖原因');
             $table->timestamp('blockade_at')->nullable()->comment('在什麼時候被封鎖');
             $table->string('ip_address')->nullable()->comment('IP Address');
+            $table->string('user_agent')->nullable()->comment('User Agent');
             $table->timestamps();
             $table->softDeletes();
         });

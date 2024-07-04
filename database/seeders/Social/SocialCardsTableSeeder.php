@@ -46,6 +46,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => null,
                 'blockade_at' => null,
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
 
             Cards::create([
@@ -70,6 +71,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => null,
                 'blockade_at' => null,
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
 
             Cards::create([
@@ -103,6 +105,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => null,
                 'blockade_at' => null,
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
 
             Cards::create([
@@ -127,6 +130,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => null,
                 'blockade_at' => null,
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
 
             Cards::create([
@@ -151,6 +155,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => null,
                 'blockade_at' => null,
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
 
             Cards::create([
@@ -175,6 +180,7 @@ class SocialCardsTableSeeder extends Seeder
                 'blockade_remarks' => "這是一則測試的封鎖文章訊息。",
                 'blockade_at' => now(),
                 'ip_address' => '127.0.0.1',
+                'user_agent' => 'Mozilla/5.0',
             ]);
         }
 

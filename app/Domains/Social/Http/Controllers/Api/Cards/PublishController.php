@@ -79,6 +79,7 @@ class PublishController extends Controller
             'ads' => $picture['ads'],
         ];
         $data['ip_address'] = $request->ip();
+        $data['user_agent'] = $request->header('User-Agent');
 
         /**
          * 將文字投稿寫入
@@ -123,6 +124,7 @@ class PublishController extends Controller
             'type' => 'picture',
         ];
         $data['ip_address'] = $request->ip();
+        $data['user_agent'] = $request->header('User-Agent');
 
         /**
          * 將圖片投稿寫入

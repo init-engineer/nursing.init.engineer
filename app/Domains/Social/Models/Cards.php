@@ -60,6 +60,7 @@ class Cards extends Model
         'blockade_remarks',
         'blockade_at',
         'ip_address',
+        'user_agent',
     ];
 
     /**
