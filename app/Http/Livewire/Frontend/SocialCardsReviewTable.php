@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Frontend;
 
 use App\Domains\Social\Models\Cards;
+use App\Domains\Social\Services\UserAgentParserService;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -58,5 +59,17 @@ class SocialCardsReviewTable extends DataTableComponent
     public function rowView(): string
     {
         return 'frontend.social.cards.includes.review';
+    }
+
+    /**
+     * Get the parsed User-Agent data for a row.
+     *
+     * @param string $userAgent
+     * @return array
+     */
+    public function getParsedUserAgent($userAgent): array
+    {
+        $parser = new UserAgentParserService($userAgent);
+        return $parser->parse();
     }
 }
