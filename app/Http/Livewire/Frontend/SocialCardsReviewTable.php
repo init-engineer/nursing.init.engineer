@@ -34,6 +34,7 @@ class SocialCardsReviewTable extends DataTableComponent
             Column::make(__('Picture')),
             Column::make(__('Content'), 'content')
                 ->sortable(),
+            Column::make(__('Request')),
             Column::make(__('Vote')),
             Column::make(__('Created At'), 'created_at')
                 ->sortable(),

@@ -25,6 +25,14 @@
     </a>
 </x-livewire-tables::bs5.table.cell>
 
+<x-livewire-tables::bs5.table.cell style="width: 480px; min-width: 480px;">
+    {{-- IP Address、User Agent --}}
+    <a href="{{ route('frontend.social.cards.show', ['id' => $row->id]) }}">
+        <p class="mb-2">IP Address: {{ $row->ip_address ?? 'None' }}</p>
+        <p class="mb-0">User-Agent: {{ $row->user_agent ?? 'None' }}</p>
+    </a>
+</x-livewire-tables::bs5.table.cell>
+
 <x-livewire-tables::bs5.table.cell style="width: 160px; min-width: 160px;">
     {{-- 投票 Vue 元件 --}}
     @if ($logged_in_user->isAdmin())
