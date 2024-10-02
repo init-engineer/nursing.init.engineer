@@ -87,11 +87,11 @@ class FacebookPublishJob implements ShouldQueue
          * 整理文章通知的內容
          */
         $message = $contentFluent->reset()
-            ->body('投稿網址： https://cowbanursing.soci.vip/')
-            ->hr()
             ->header($this->cards->id)
             ->hr()
             ->body($this->cards->content)
+            ->hr()
+            ->body('投稿網址： https://cowbanursing.soci.vip/')
             ->build();
 
         /**
