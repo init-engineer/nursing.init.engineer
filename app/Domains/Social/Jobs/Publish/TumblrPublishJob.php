@@ -106,7 +106,7 @@ class TumblrPublishJob implements ShouldQueue
          * 整理文章通知的內容
          */
         $caption = $contentFluent->reset()
-            ->body('投稿網址： https://cowbanursing.soci.vip/')
+            ->body('投稿網址： https://portaly.cc/cowbanursing')
             ->hr()
             ->header($this->cards->id)
             ->hr()

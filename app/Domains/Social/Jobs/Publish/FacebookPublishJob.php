@@ -91,7 +91,7 @@ class FacebookPublishJob implements ShouldQueue
             ->hr()
             ->body($this->cards->content)
             ->hr()
-            ->body('投稿網址： https://cowbanursing.soci.vip/')
+            ->body('投稿網址： https://portaly.cc/cowbanursing')
             ->build();
 
         /**
