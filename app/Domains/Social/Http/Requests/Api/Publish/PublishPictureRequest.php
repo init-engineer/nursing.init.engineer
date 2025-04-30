@@ -28,7 +28,7 @@ class PublishPictureRequest extends FormRequest
     {
         return [
             'content' => ['required', 'string', 'min:30', 'max:4096'],
-            'picture' => ['required', 'image', 'mimes:jpg,jpeg,png,gif', 'max:10240'],
+            'picture' => ['required', 'image', 'mimes:jpg,jpeg,png,gif', 'max:4096'],
         ];
     }
 }
