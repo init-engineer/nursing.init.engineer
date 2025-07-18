@@ -78,10 +78,10 @@ class PublishController extends Controller
             'theme' => $data['config']['theme'],
             'font' => $data['config']['font'],
             'ads' => $picture['ads'],
+            'check_code' => $data['check_code'],
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
-        $data['check_code'] = Str::random(16);
 
         /**
          * 將文字投稿寫入
@@ -124,10 +124,10 @@ class PublishController extends Controller
         ];
         $data['config'] = [
             'type' => 'picture',
+            'check_code' => $data['check_code'],
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
-        $data['check_code'] = Str::random(16);
 
         /**
          * 將圖片投稿寫入

@@ -39,7 +39,7 @@
         <p class="mb-2">Device: <br />{{ $parsedData['device'] ?? 'None' }}</p>
         <p class="mb-2">Browser: <br />{{ $parsedData['browser'] ?? 'None' }}</p>
         <p class="mb-0">Browser Version: <br />{{ $parsedData['browser_version'] ?? 'None' }}</p>
-        <p class="mb-0">Check Code: <br />{{ $parsedData['check_code'] ?? 'None' }}</p>
+        <p class="mb-0">Check Code: <br />{{ $row->config['check_code'] ?? 'None' }}</p>
     </a>
 </x-livewire-tables::bs5.table.cell>
 
