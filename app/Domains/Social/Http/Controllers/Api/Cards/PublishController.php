@@ -15,6 +15,7 @@ use App\Domains\Social\Services\CardsService;
 use App\Domains\Social\Services\Image\ImagesGenerator;
 use App\Http\Controllers\Controller;
 use Illuminate\Container\Container;
+use Illuminate\Support\Str;
 
 /**
  * Class PublishController.
@@ -80,6 +81,7 @@ class PublishController extends Controller
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
+        $data['check_code'] = Str::random(16);
 
         /**
          * 將文字投稿寫入
@@ -125,6 +127,7 @@ class PublishController extends Controller
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
+        $data['check_code'] = Str::random(16);
 
         /**
          * 將圖片投稿寫入
