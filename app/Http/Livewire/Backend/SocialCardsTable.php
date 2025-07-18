@@ -81,6 +81,7 @@ class SocialCardsTable extends DataTableComponent
             Column::make(__('Content'), 'content')
                 ->sortable(),
             Column::make(__('Platform'), 'platform'),
+            Column::make(__('Request'), 'request'),
             Column::make(__('Created At'), 'created_at')
                 ->sortable(),
             Column::make(__('Actions')),
