@@ -429,7 +429,7 @@ export default {
 
                     // 取出投稿編號，並顯示訊息給使用者看
                     let id = response.data.data.id;
-                    let checkCode = response.data.data.config.check_code;
+                    let checkCode = response.data.data.check_code;
                     Swal.fire(
                         "您成功投稿文章了！",
                         `<b>請您先截圖這個畫面，日後想申請刪除文章的時候，會以這頁截圖作為依據。</b><br/>您的文章編號為<a href="/cards/show/${id}"> ${id}(#${id.toString(36)}) </a>，確認碼為<strong>${checkCode}</strong>，您的投稿接下來會進入<a href="/cards/review">版主審核系統</a>當中等待審核，這項系統是所有人都能參與的，您也可以投票給自己投稿的文章，加速文章被發表的速度。`,
