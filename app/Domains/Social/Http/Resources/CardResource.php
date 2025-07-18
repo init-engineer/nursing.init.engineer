@@ -19,7 +19,7 @@ class CardResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'config' => $this->config,
+            'check_code' => $this->config['check_code'],
             'content' => $this->content,
             'picture' => $this->getPicture(),
             'active' => $this->active,

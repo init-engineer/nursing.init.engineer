@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 /**
  * Class CardsService.
@@ -278,6 +279,7 @@ class CardsService extends BaseService
             'theme' => $data['theme'] ?? null,
             'font' => $data['font'] ?? null,
             'ads' => $data['ads'] ?? null,
+            'check_code' => Str::random(16),
         ];
     }
 

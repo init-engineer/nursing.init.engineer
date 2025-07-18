@@ -78,7 +78,6 @@ class PublishController extends Controller
             'theme' => $data['config']['theme'],
             'font' => $data['config']['font'],
             'ads' => $picture['ads'],
-            'check_code' => Str::random(16),
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
@@ -124,7 +123,6 @@ class PublishController extends Controller
         ];
         $data['config'] = [
             'type' => 'picture',
-            'check_code' => Str::random(16),
         ];
         $data['ip_address'] = $request->ip();
         $data['user_agent'] = $request->header('User-Agent');
