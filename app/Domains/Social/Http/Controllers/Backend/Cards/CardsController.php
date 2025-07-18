@@ -269,7 +269,7 @@ class CardsController extends Controller
      * @return mixed
      * @throws \App\Exceptions\GeneralException
      */
-    public function destroy($request, Cards $cards)
+    public function destroy(Cards $cards)
     {
         $this->cardsService->delete($cards);
 
