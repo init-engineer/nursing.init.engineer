@@ -29,7 +29,7 @@
     {{-- 投稿時間 --}}
     <a href="{{ route('frontend.social.cards.show', ['id' => $row->id]) }}">
         <div>
-            <strong>{{ $row->created_at->toDateString() }}</strong>
+            <strong>{{ $row->created_at->toDatetimeString() }}</strong>
             <span>{{ $row->created_at->diffForHumans() }}</span>
         </div>
     </a>
@@ -39,7 +39,7 @@
     {{-- 最後更新於 --}}
     <a href="{{ route('frontend.social.cards.show', ['id' => $row->id]) }}">
         <div>
-            <strong>{{ $row->updated_at->toDateString() }}</strong>
+            <strong>{{ $row->updated_at->toDatetimeString() }}</strong>
             <span>{{ $row->updated_at->diffForHumans() }}</span>
         </div>
     </a>
