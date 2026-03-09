@@ -75,7 +75,7 @@ class ReviewsPublish extends Command
      *
      * @var int
      */
-    protected $delayMinutes = 20;
+    protected $delayMinutes = 60;
 
     /**
      * @var CardsService
